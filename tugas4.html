@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Pea - Brewed to Perfection</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* === Custom CSS Variables === */
+        :root {
+            --dark-coffee: #231F20;
+            --medium-brown: #A07855;
+            --cream-bg: #EAE3D9;
+            --text-on-dark: #FFFFFF;
+            --text-on-light: #4A4A4A;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Poppins', sans-serif;
+        }
+
+        /* === General Styles === */
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--cream-bg);
+            color: var(--text-on-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* === Utilities === */
+        .bg-coffee { background-color: var(--dark-coffee); color: var(--text-on-dark); }
+        .text-brown { color: var(--medium-brown); }
+        
+        .btn-custom-light {
+            background-color: var(--medium-brown);
+            color: white;
+            border-radius: 20px;
+            padding: 8px 25px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border: none;
+            transition: all 0.3s;
+        }
+        .btn-custom-light:hover {
+            background-color: #8c684a;
+            color: white;
+        }
+
+        .btn-custom-dark {
+            background-color: white;
+            color: var(--dark-coffee);
+            border-radius: 20px;
+            padding: 8px 25px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border: none;
+        }
+
+        /* === Header & Nav === */
+        .top-bar {
+            font-size: 0.75rem;
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .navbar {
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white !important;
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            font-size: 0.85rem;
+            margin: 0 10px;
+        }
+        .nav-link:hover {
+            color: white !important;
+        }
+
+        /* === Hero Section === */
+        .hero-section {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('kopi1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+        .hero-coffee-cup {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            z-index: 10;
+        }
+
+        /* === Featured Drinks === */
+        .featured-section {
+            padding: 100px 0 60px;
+            position: relative;
+        }
+        /* The angled background element */
+        .featured-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background-color: var(--dark-coffee);
+            clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
+            z-index: 1;
+        }
+        .featured-content {
+            position: relative;
+            z-index: 2;
+        }
+        .drink-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .drink-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .drink-card-body {
+            padding: 25px;
+            text-align: center;
+        }
+
+        /* Promotion Row */
+        .promo-block {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* === Daily Deal === */
+        .daily-deal-section {
+            padding: 60px 0;
+            position: relative;
+        }
+        /* Background beans texture (using a pattern) */
+        .daily-deal-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/coffee-bean-dark.png');
+            background-color: var(--dark-coffee);
+            opacity: 0.1;
+            z-index: 1;
+        }
+        /* Top angled edge */
+        .daily-deal-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: var(--cream-bg);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 100%);
+            z-index: 2;
+        }
+
+        .deal-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .deal-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+        }
+        .croissant-image {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        /* === Footer === */
+        footer {
+            padding: 60px 0 30px;
+            font-size: 0.85rem;
+        }
+        footer h6 {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.7);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* === Responsiveness === */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-coffee-cup { width: 100px; bottom: -30px; }
+            .promo-block { flex-direction: column; text-align: center; }
+            .promo-block img { margin-bottom: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-coffee">
+        <div class="top-bar">
+            <div class="container d-flex justify-content-between">
+                <span><i class="fas fa-phone-alt me-2"></i> +1 234 567 890</span>
+                <span><i class="fas fa-envelope me-2"></i> info@coffeepea.com</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Coffee Pea</a>
+                <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <button class="btn btn-custom-dark btn-sm d-none d-lg-block">Book a Table</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section text-center text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 class="hero-title mb-4">Brewed to Perfection,</h1>
+                    <p class="mb-5 lead">Experience the finest selection of artisan coffee, sourced globally and roasted to order for the ultimate flavor.</p>
+                </div>
+            </div>
+        </div>
+        <img src="logo kopi.jpg" alt="Coffee Cup" class="hero-coffee-cup img-fluid rounded-circle shadow">
+    </section>
+
+    <section class="featured-section">
+        <div class="container featured-content text-center">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-white">
+                    <h2 class="mb-3 mt-4 mt-md-0">FEATURED DRINKS</h2>
+                    <p class="small opacity-75">Curated favorites from our expert baristas, blending classic techniques with modern twists.</p>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-md-4">
+                    <div class="card drink-card">
+                        <img src="kopi2.jpg" class="card-img-top" alt="Espresso">
+                        <div class="drink-card-body">
+                            <h4 class="card-title">Espresso Masterpieces</h4>
+                            <p class="card-text text-muted">A rich, concentrated shot of our signature blend, boasting notes of dark chocolate and caramel.</p>
+                            <button class="btn btn-custom-light">Explore Menu</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card drink-card">
+                        <img src="kopi3.jpg" class="card-img-top" alt="Latte">
+                        <div class="drink-card-body">
+                            <h4 class="card-title">Iced Favorites</h4>
+                            <p class="card-text text-muted">Cool down with our smooth, slow-steeped cold brew or a refreshing iced vanilla latte.</p>
+                            <button class="btn btn-custom-light">View Specials</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card drink-card">
+                        <img src="kopi4.jpg" class="card-img-top" alt="Beans">
+                        <div class="drink-card-body">
+                            <h4 class="card-title">Organic Beans</h4>
+                            <p class="card-text text-muted">Purchase our ethically sourced, single-origin beans to brew the perfect cup at home.</p>
+                            <button class="btn btn-custom-light">Shop Beans</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-10 промо-block">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center w-100 promo-inner">
+                        <div class="d-flex align-items-center me-md-5 mb-3 mb-md-0">
+                            <img src="gambar1.jpg" alt="Latte Art" class="rounded-circle me-3" width="70" height="70" style="object-fit:cover;">
+                            <div class="text-start">
+                                <h5 class="mb-0 text-brown">Get 11 Coffee</h5>
+                                <p class="small text-muted mb-0">Buy 10, get your 11th free!</p>
+                            </div>
+                        </div>
+                        <img src="gambar2.jpg" alt="Milkshake" class="mx-3 rounded" width="100" height="100" style="object-fit:cover;">
+                        <div class="text-start flex-grow-1">
+                            <h5 class="mb-0">Creamy Milkshakes</h5>
+                            <p class="small text-muted mb-0">Indulgent flavors, perfect any time.</p>
+                        </div>
+                        <button class="btn btn-custom-light btn-sm ms-md-3 mt-3 mt-md-0">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="daily-deal-section bg-coffee">
+        <div class="container deal-content">
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center mt-5 mt-md-0">
+                    <h2 class="text-white mb-2">Daily Deal</h2>
+                    <p class="small text-white opacity-75">Our special combination offer, updated every morning.</p>
+                </div>
+            </div>
+            
+            <div class="row g-4 align-items-stretch">
+                <div class="col-md-4">
+                    <div class="deal-card text-center d-flex flex-column justify-content-center">
+                        <h3 class="text-brown">Daily Deal</h3>
+                        <p class="text-muted small my-3">Enjoy a classic butter croissant and a regular Cappuccino for a special price.</p>
+                        <h2 class="mb-3">$7.50 <span class="text-muted fs-6 fs-strike">$10.00</span></h2>
+                        <button class="btn btn-custom-light">Claim Deal</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="deal-card p-2 d-flex align-items-center justify-content-center">
+                        <img src="gambar.jpg" alt="Croissant" class="croissant-image img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="deal-card d-flex flex-column justify-content-center">
+                        <h4 class="mb-3">Newsletter Sign</h4>
+                        <p class="text-muted small mb-4">Sign up to get daily deals and coffee news straight to your inbox.</p>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control form-control-sm border-secondary" placeholder="Your Email">
+                            <button class="btn btn-custom-light btn-sm" type="button">Submit</button>
+                        </div>
+                        <div class="small text-muted"><i class="fas fa-check-circle text-success me-1"></i> Success! Check your email.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-coffee">
+        <div class="container text-white-50">
+            <div class="row g-4 text-center text-md-start">
+                <div class="col-md-3 col-6">
+                    <h6 class="text-white">Coffee Shop</h6>
+                    <ul>
+                        <li>Our Story</li>
+                        <li>Locations</li>
+                        <li>Careers</li>
+                        <li>Press</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h6 class="text-white">Our Coffee</h6>
+                    <ul>
+                        <li>Menu</li>
+                        <li>Brewing Guides</li>
+                        <li>Wholesale</li>
+                        <li>Sustainability</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h6 class="text-white">Contact</h6>
+                    <ul>
+                        <li>FAQ</li>
+                        <li>Contact Us</li>
+                        <li>Book Table</li>
+                        <li>Feedback</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h6 class="text-white">Follow Us</h6>
+                    <div class="d-flex gap-3 justify-content-center justify-content-md-start fs-5 mt-2">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="mt-4 fs-1 text-white font-serif">Coffee Pea</div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom text-center">
+                <p class="mb-0">&copy; 2023 Coffee Pea Inc. All rights reserved. | Terms of Service | Privacy Policy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycle for a Better Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+        }
+        .orange-underline::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background-color: #f59e0b;
+            margin: 8px auto 0;
+        }
+        .clickable-card {
+            transition: all 0.3s ease;
+        }
+        .clickable-card:hover {
+            transform: translateY(-8px);
+            filter: brightness(90%);
+        }
+    </style>
+</head>
+<body class="bg-[#dcf0fb] font-sans text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-start space-x-6 text-[10px] font-medium text-gray-500 uppercase tracking-tighter">
+            <a href="#home" class="hover:text-blue-600">Home</a>
+            <a href="#about" class="hover:text-blue-600">About</a>
+            <a href="#analysis" class="hover:text-blue-600">Analysis</a>
+            <a href="#bundling" class="hover:text-blue-600">Bundling</a>
+            <a href="#products" class="hover:text-blue-600">Products</a>
+            <a href="#team" class="hover:text-blue-600">Team</a>
+            <a href="#contact us" class="hover:text-blue-600">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-bg h-screen flex flex-col items-center justify-center text-center text-white px-4">
+        <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight uppercase">Recycle For A <br> Better Future</h1>
+        <p class="max-w-2xl text-sm mb-8 font-light">Kurangi, Gunakan Kembali, dan Daur Ulang. Aksi sederhana untuk menjaga bumi tetap bersih.</p>
+        <a href="#about" class="bg-white text-black px-6 py-1 rounded-full text-[10px] font-bold hover:bg-gray-200 uppercase">Learn More</a>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1">
+            <h2 class="text-4xl font-bold text-center md:text-left mb-6 orange-underline md:after:ml-0">About</h2>
+            <p class="text-gray-600 leading-relaxed text-justify text-sm">Kami memilih limbah plastik untuk didaur ulang karena plastik adalah sampah yang paling banyak digunakan dan sangat sulit terurai. Dengan mendaur ulang, kita bisa mengurangi pencemaran dan mengubah plastik bekas menjadi barang bermanfaat.</p>
+        </div>
+        <div class="w-48 h-48 bg-white rounded-2xl shadow-xl flex items-center justify-center p-8">
+            <img src="https://cdn-icons-png.flaticon.com/512/3211/3211154.png" alt="Recycle Logo">
+        </div>
+    </section>
+
+    <!-- Analysis (Clickable Cards) -->
+    <section id="analysis" class="py-20 bg-[#ebf7ff]">
+        <h2 class="text-4xl font-bold text-center mb-16 orange-underline">Analysis</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-6">
+            <a href="learn.html" class="clickable-card bg-white p-4 rounded-3xl shadow-sm block">
+                <img src="https://images.unsplash.com/photo-1530587191325-3db32d826c18?w=800" class="rounded-2xl w-full h-64 object-cover" alt="Analysis 1">
+            </a>
+            <a href="learn2.html" class="clickable-card bg-white p-4 rounded-3xl shadow-sm block">
+                <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=800" class="rounded-2xl w-full h-64 object-cover" alt="Analysis 2">
+            </a>
+        </div>
+    </section>
+
+    <!-- Bundling -->
+    <section id="bundling" class="py-16 bg-[#1d70c9] text-white text-center">
+        <h2 class="text-4xl font-bold mb-12 orange-underline">Bundling <span class="border-b-4 border-yellow-500 pb-1">Set</span> Aesthetic</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold">Bundling 1</h3>
+                <a href="bundling1.html" class="inline-block bg-white text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold hover:bg-gray-100">Learn More..</a>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold">Bundling 2</h3>
+                <a href="bundling2.html" class="inline-block bg-white text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold hover:bg-gray-100">Learn More..</a>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold">Bundling 3</h3>
+                <a href="bundling3.html" class="inline-block bg-white text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold hover:bg-gray-100">Learn More..</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-20 px-6 max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-16 orange-underline">Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col border border-gray-50">
+                <img src="materi umum.jpg" class="h-56 w-full object-cover">
+                <div class="p-6">
+                    <h4 class="font-bold text-sm mb-4 uppercase">Materi Umum</h4>
+                    <a href="materi umum.html" class="inline-block bg-[#e0f2fe] text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold">Learn More..</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col border border-gray-50">
+                <img src="ir soekarno.jpg" class="h-56 w-full object-cover">
+                <div class="p-6">
+                    <h4 class="font-bold text-sm mb-4 uppercase">Kolase dari Plastik</h4>
+                    <a href="kolase.html" class="inline-block bg-[#e0f2fe] text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold">Learn More..</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col border border-gray-50">
+                <img src="https://i.ibb.co.com/jkPSF7XS/about.png" class="h-56 w-full object-cover">
+                <div class="p-6">
+                    <h4 class="font-bold text-sm mb-4 uppercase">Lampu dari Sendok Plastik</h4>
+                    <a href="lampu hias.html" class="inline-block bg-[#e0f2fe] text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold">Learn More..</a>
+                </div>
+            </div>
+             <div class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col border border-gray-50">
+                <img src="tas.jpg" class="h-56 w-full object-cover">
+                <div class="p-6">
+                    <h4 class="font-bold text-sm mb-4 uppercase">Tas Dari Tutup Botol</h4>
+                    <a href="tutup botol bekas.html" class="inline-block bg-[#e0f2fe] text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold">Learn More..</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col border border-gray-50">
+                <img src="celengan.jpg" class="h-56 w-full object-cover">
+                <div class="p-6">
+                    <h4 class="font-bold text-sm mb-4 uppercase">Celengan Dari Botol Bekas</h4>
+                    <a href="celengan.html" class="inline-block bg-[#e0f2fe] text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold">Learn More..</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg flex flex-col border border-gray-50">
+                <img src="kesimpulan.jpg" class="h-56 w-full object-cover">
+                <div class="p-6">
+                    <h4 class="font-bold text-sm mb-4 uppercase">Kesimpulan</h4>
+                    <a href="kesimpulan.html" class="inline-block bg-[#e0f2fe] text-blue-600 px-6 py-1 rounded-full text-[10px] font-bold">Learn More..</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tim Pengembang (Dari Screenshot_13-5-2026_173221_.jpeg) -->
+    <section id="team" class="py-20 bg-[#ebf7ff] text-center">
+        <h2 class="text-4xl font-bold mb-16 orange-underline">Tim Pengembang</h2>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
+            <!-- Member 1 -->
+            <div class="bg-[#1e4da4] text-white p-8 rounded-3xl shadow-lg flex flex-col items-center">
+                <img src="charis.jpeg" class="w-32 h-32 rounded-full border-4 border-blue-400 object-cover mb-6" alt="Charisma">
+                <h3 class="font-bold text-lg">Charisma Umu Azahra</h3>
+                <p class="text-xs mt-1">X PPLG 4</p>
+                <p class="text-xs font-bold mt-2">10</p>
+            </div>
+            <!-- Member 2 -->
+            <div class="bg-[#1e4da4] text-white p-8 rounded-3xl shadow-lg flex flex-col items-center">
+                <img src="nana.jpeg" class="w-32 h-32 rounded-full border-4 border-red-500 object-cover mb-6" alt="Alvyana">
+                <h3 class="font-bold text-lg">Alvyana Septia Anggraini</h3>
+                <p class="text-xs mt-1">X PPLG 4</p>
+                <p class="text-xs font-bold mt-2">3</p>
+            </div>
+            <!-- Member 3 -->
+            <div class="bg-[#1e4da4] text-white p-8 rounded-3xl shadow-lg flex flex-col items-center">
+                <img src="putri.jpeg" class="w-32 h-32 rounded-full border-4 border-blue-300 object-cover mb-6" alt="Putri Aulia">
+                <h3 class="font-bold text-lg">Putri Aulia</h3>
+                <p class="text-xs mt-1">X PPLG 4</p>
+                <p class="text-xs font-bold mt-2">27</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1d70c9] text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+            <div>
+                <h4 class="font-bold text-yellow-400 mb-4 uppercase">Information</h4>
+                <p class="text-[10px] text-blue-100">Project IPAS untuk kesadaran lingkungan dan pengelolaan limbah plastik sekolah.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-yellow-400 mb-4 uppercase">Helpful Links</h4>
+                <ul class="text-[10px] space-y-2">
+                    <li><a href="#" class="hover:underline">Panduan Daur Ulang</a></li>
+                    <li><a href="#" class="hover:underline">Statistik Limbah</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-yellow-400 mb-4 uppercase">Contact Us</h4>
+                <p class="text-[10px]">Email: info@recyclefuture.com</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-yellow-400 mb-4 uppercase">Follow</h4>
+                <div class="flex space-x-4 text-lg">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetPals - Navigasi Aktif</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-orange: #FF8D29;
+            --soft-yellow: #FFCD38;
+            --light-bg: #F9F9F9;
+        }
+
+        /* Smooth Scroll Effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, .brand-font { font-family: 'Fredoka', sans-serif; }
+
+        /* Navbar Styling */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        /* Hero Adjustment for Navbar Height */
+        section {
+            padding: 80px 0; /* Memberi ruang agar judul tidak tertutup navbar saat diklik */
+        }
+
+        .hero {
+            background-color: var(--soft-yellow);
+            padding: 120px 0 80px 0;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .btn-orange {
+            background-color: var(--primary-orange);
+            color: white;
+            border-radius: 30px;
+            padding: 10px 30px;
+            border: none;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            border: none;
+            transition: 0.3s;
+        }
+        
+        .product-card:hover { transform: translateY(-10px); }
+
+        footer { background: #2d3436; color: white; padding: 40px 0; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-font fs-3" href="#beranda" style="color: var(--primary-orange);">
+                <i class="fas fa-paw"></i> PetPals
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kategori">Kategori</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#produk">Produk Terlaris</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-orange d-none d-lg-block">Order Now</button>
+        </div>
+    </nav>
+
+    <section id="beranda" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">Nutrisi Terbaik Untuk Anabul</h1>
+                    <p class="lead">Pastikan peliharaanmu mendapatkan makanan yang sehat dan bergizi setiap hari.</p>
+                    <a href="#produk" class="btn btn-orange">Lihat Menu</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="anjing.jpg" class="rounded-circle border border-5 border-white shadow" alt="Pet">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kategori" class="container">
+        <h2 class="text-center mb-5">Cari Berdasarkan Kategori</h2>
+        <div class="row g-4 text-center">
+            <div class="col-md-3">
+                <div class="p-4 bg-white rounded-4 shadow-sm">
+                    <i class="fas fa-cat fa-3x mb-3 text-warning"></i>
+                    <h5>Kucing</h5>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-white rounded-4 shadow-sm">
+                    <i class="fas fa-dog fa-3x mb-3 text-warning"></i>
+                    <h5>Anjing</h5>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-white rounded-4 shadow-sm">
+                    <i class="fas fa-fish fa-3x mb-3 text-warning"></i>
+                    <h5>Ikan</h5>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="p-4 bg-white rounded-4 shadow-sm">
+                    <i class="fas fa-dove fa-3x mb-3 text-warning"></i>
+                    <h5>Burung</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="produk" class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold brand-font" style="color: var(--dark-text);">Produk Terlaris Minggu Ini</h2>
+            <p class="text-muted">Pilihan nutrisi terbaik yang paling banyak dicari oleh para pecinta anabul.</p>
+            <div style="width: 80px; height: 4px; background: var(--primary-orange); margin: 0 auto;"></div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm product-card" style="border-radius: 20px; transition: 0.3s;">
+                    <div class="position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-3" style="z-index: 10;">HOT DEAL</span>
+                        <img src="makanan anjing.jpg" 
+                             class="card-img-top img-zoom" alt="Makanan Anjing" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-2 text-warning">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-muted small">(120+)</span>
+                        </div>
+                        <h5 class="card-title fw-bold">Premium Beef Kibbles</h5>
+                        <p class="text-muted small">Tinggi protein untuk otot anjing yang kuat dan sehat.</p>
+                        <h4 class="fw-bold mb-3" style="color: var(--primary-orange);">Rp 125.000</h4>
+                        <button class="btn btn-orange w-100 py-2 rounded-pill fw-bold">
+                            <i class="fas fa-shopping-basket me-2"></i>Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm product-card" style="border-radius: 20px; transition: 0.3s;">
+                    <div class="position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
+                        <img src="formula anjing.jpg" 
+                             class="card-img-top img-zoom" alt="Makanan Kucing" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-2 text-warning">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            <span class="text-muted small">(85+)</span>
+                        </div>
+                        <h5 class="card-title fw-bold">Salmon & Tuna Mix</h5>
+                        <p class="text-muted small">Formula khusus untuk bulu anjing yang lebih lebat dan mengkilap.</p>
+                        <h4 class="fw-bold mb-3" style="color: var(--primary-orange);">Rp 95.000</h4>
+                        <button class="btn btn-orange w-100 py-2 rounded-pill fw-bold">
+                            <i class="fas fa-shopping-basket me-2"></i>Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm product-card" style="border-radius: 20px; transition: 0.3s;">
+                    <div class="position-relative overflow-hidden" style="border-radius: 20px 20px 0 0;">
+                        <img src="makanan2.jpg" 
+                             class="card-img-top img-zoom" alt="Vitamin Hewan" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-2 text-warning">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <span class="text-muted small">(200+)</span>
+                        </div>
+                        <h5 class="card-title fw-bold">Organic Wet Food</h5>
+                        <p class="text-muted small">Makanan basah organik tanpa bahan pengawet buatan.</p>
+                        <h4 class="fw-bold mb-3" style="color: var(--primary-orange);">Rp 45.000</h4>
+                        <button class="btn btn-orange w-100 py-2 rounded-pill fw-bold">
+                            <i class="fas fa-shopping-basket me-2"></i>Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .img-zoom {
+        transition: transform .5s ease;
+    }
+    .product-card:hover .img-zoom {
+        transform: scale(1.1);
+    }
+    .product-card:hover {
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+    .btn-orange {
+        background-color: #FF8D29;
+        color: white;
+        border: none;
+        transition: 0.3s;
+    }
+    .btn-orange:hover {
+        background-color: #e67e22;
+        color: white;
+        transform: scale(1.02);
+    }
+</style>
+
+    <footer id="kontak">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="brand-font"><i class="fas fa-paw"></i> PetPals</h3>
+                    <p>Hubungi kami untuk konsultasi gizi hewan gratis!</p>
+                    <p><i class="fas fa-phone me-2"></i> +62 56-4762-3610</p>
+                </div>
+              <div class="col-md-3 text-md-end">
+    <h6 class="text-white fw-bold mb-4">Sosial Media</h6>
+    <div class="d-flex justify-content-md-end gap-3 mb-4">
+        
+        <a href="https://www.instagram.com/p_4uliaaa?igsh=dTM3NmQ3cm1wMGRt" target="_blank" class="text-white fs-4">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://wa.me/+62 856-4762-3610" target="_blank" class="text-white fs-4">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
